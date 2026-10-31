@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market Analysis</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Stock Market Analysis</h1>
+    </header>
+
+    <main class="app-container">
+        <!-- Top Section: Chart & List -->
+        <div class="top-section">
+            <!-- Chart Section -->
+            <section class="chart-section card">
+                <div class="chart-header">
+                    <h2 id="chart-title">Stock Price</h2>
+                    <div class="range-buttons">
+                        <button class="range-btn" data-range="1month">1month</button>
+                        <button class="range-btn" data-range="3month">3month</button>
+                        <button class="range-btn active" data-range="1year">1year</button>
+                        <button class="range-btn" data-range="5year">5year</button>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="stockChart"></canvas>
+                </div>
+            </section>
+
+            <!-- List Section -->
+            <section class="list-section card">
+                <h2>Portfolio Stocks</h2>
+                <div id="stock-list-container" class="stock-list">
+                    <div class="message-box">Loading stocks... (Backend can take up to 30s)</div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Bottom Section: Detail Section -->
+        <section class="detail-section card">
+            <h2>Stock Details</h2>
+            <div id="stock-details-content">
+                <div class="message-box">Select a stock from the list to view details.</div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
